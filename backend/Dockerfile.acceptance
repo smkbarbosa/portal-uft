@@ -1,7 +1,7 @@
 ARG PLONE_VERSION=6.0.0a4
 FROM plone/plone-backend:${PLONE_VERSION}
 
-LABEL maintainer="Érico Andrei <ericof@plone.org>" \
+LABEL maintainer="Érico Andrei <smkbarbosa@plone.org>" \
       org.label-schema.name="portal-uft-acceptance" \
       org.label-schema.description="Portal UFT backend acceptance image." \
       org.label-schema.vendor="Érico Andrei"

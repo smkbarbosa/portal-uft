@@ -5,7 +5,7 @@
 bin
 include
 inventory/prod.yml
-host_vars/ericof-prod.yml
+host_vars/smkbarbosa-prod.yml
 lib
 lib64
 pyvenv.cfg

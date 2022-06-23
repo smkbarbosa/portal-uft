@@ -7,7 +7,7 @@ SHELL:=bash
 .DELETE_ON_ERROR:
 MAKEFLAGS+=--warn-undefined-variables
 MAKEFLAGS+=--no-builtin-rules
-IMAGE_NAME=ghcr.io/ericof/portal-uft-frontend
+IMAGE_NAME=ghcr.io/smkbarbosa/portal-uft-frontend
 IMAGE_TAG=latest
 
 NODEBIN = ./node_modules/.bin

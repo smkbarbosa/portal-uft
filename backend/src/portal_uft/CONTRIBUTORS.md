@@ -1,3 +1,3 @@
 # Contributors
 
-- ericof [ericof@plone.org]
+- smkbarbosa [smkbarbosa@plone.org]

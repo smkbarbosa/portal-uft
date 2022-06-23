@@ -12,7 +12,7 @@ services:
     - "80:80"
 
   frontend:
-    image: ghcr.io/ericof/portal-uft-frontend:latest
+    image: ghcr.io/smkbarbosa/portal-uft-frontend:latest
     environment:
       RAZZLE_INTERNAL_API_PATH: http://backend:8080/Plone
     ports:
@@ -21,7 +21,7 @@ services:
       - backend
 
   backend:
-    image: ghcr.io/ericof/portal-uft-backend:latest
+    image: ghcr.io/smkbarbosa/portal-uft-backend:latest
     environment:
       SITE: Plone
       ADDITIONAL_PROFILES: "portal_uft:default,portal_uft:initial"

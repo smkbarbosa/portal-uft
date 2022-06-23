@@ -127,16 +127,16 @@ stop-stack:  ## Stop local stack
 .PHONY: build-acceptance-servers
 build-acceptance-servers: ## Build Acceptance Servers
 	@echo "Build acceptance backend"
-	@docker build backend -t ericof/portal-uft-backend:acceptance -f backend/Dockerfile.acceptance
+	@docker build backend -t smkbarbosa/portal-uft-backend:acceptance -f backend/Dockerfile.acceptance
 	@echo "Build acceptance frontend"
-	@docker build frontend -t ericof/portal-uft-frontend:acceptance -f frontend/Dockerfile
+	@docker build frontend -t smkbarbosa/portal-uft-frontend:acceptance -f frontend/Dockerfile
 
 .PHONY: start-acceptance-servers
 start-acceptance-servers: build-acceptance-servers ## Start Acceptance Servers
 	@echo "Start acceptance backend"
-	@docker run --rm -p 55001:55001 --name portal-uft-backend-acceptance -d ericof/portal-uft-backend:acceptance
+	@docker run --rm -p 55001:55001 --name portal-uft-backend-acceptance -d smkbarbosa/portal-uft-backend:acceptance
 	@echo "Start acceptance frontend"
-	@docker run --rm -p 3000:3000 --name portal-uft-frontend-acceptance --link portal-uft-backend-acceptance:backend -e RAZZLE_API_PATH=http://localhost:55001/plone -e RAZZLE_INTERNAL_API_PATH=http://backend:55001/plone -d ericof/portal-uft-frontend:acceptance
+	@docker run --rm -p 3000:3000 --name portal-uft-frontend-acceptance --link portal-uft-backend-acceptance:backend -e RAZZLE_API_PATH=http://localhost:55001/plone -e RAZZLE_INTERNAL_API_PATH=http://backend:55001/plone -d smkbarbosa/portal-uft-frontend:acceptance
 
 .PHONY: stop-acceptance-servers
 stop-acceptance-servers: ## Stop Acceptance Servers

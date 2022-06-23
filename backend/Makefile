@@ -24,7 +24,7 @@ LINT=docker run --rm -v "${BACKEND_FOLDER}":/github/workspace plone/code-quality
 
 PACKAGE_NAME=portal_uft
 PACKAGE_PATH=src/portal_uft/src/
-IMAGE_NAME=ghcr.io/ericof/portal-uft-backend
+IMAGE_NAME=ghcr.io/smkbarbosa/portal-uft-backend
 IMAGE_TAG=latest
 CHECK_PATH=src/portal_uft/setup.py scripts/ $(PACKAGE_PATH)
 

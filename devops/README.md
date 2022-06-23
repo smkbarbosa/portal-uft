@@ -25,7 +25,7 @@ Create `.env_prod`, if it does not exist, setting all values defined in `.env_lo
 source .env_prod
 ```
 
-Also, add a `prod.yml` file to `inventory` folder (with information about the production server), and a `ericof-prod.yml` to `host_vars` folder.
+Also, add a `prod.yml` file to `inventory` folder (with information about the production server), and a `smkbarbosa-prod.yml` to `host_vars` folder.
 
 
 ## Docker configuration

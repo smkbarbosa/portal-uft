@@ -115,9 +115,9 @@ jobs:
         uses: docker/metadata-action@v3
         with:
           images: |
-            ghcr.io/ericof/portal-uft-backend
+            ghcr.io/smkbarbosa/portal-uft-backend
           labels: |
-            org.label-schema.docker.cmd=docker run -d -p 8080:8080 ghcr.io/ericof/portal-uft-backend:latest
+            org.label-schema.docker.cmd=docker run -d -p 8080:8080 ghcr.io/smkbarbosa/portal-uft-backend:latest
           tags: |
             type=ref,event=branch
             type=sha

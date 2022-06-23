@@ -16,7 +16,7 @@ RUN yarn install \
 
 FROM base
 
-LABEL maintainer="Érico Andrei <ericof@plone.org>" \
+LABEL maintainer="Érico Andrei <smkbarbosa@plone.org>" \
       org.label-schema.name="portal-uft-frontend" \
       org.label-schema.description="Portal UFT frontend image." \
       org.label-schema.vendor="Érico Andrei"
