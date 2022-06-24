@@ -47,7 +47,7 @@ class CampusIntegrationTest(unittest.TestCase):
             extension="2022",
         )
         self.assertTrue(ICampus.providedBy(obj))
-        self.assertEqual(obj, self.portal["palmas"])git 
+        self.assertEqual(obj, self.portal["palmas"])
 
     def test_subscriber_added(self):
         obj = api.content.create(

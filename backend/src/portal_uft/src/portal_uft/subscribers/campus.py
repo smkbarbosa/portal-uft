@@ -1,7 +1,7 @@
-from cffi import api
 from kitconcept import api
 from portal_uft.content.campus import Campus
-from zope.lifecycleevent import ObjectAddedEvent, ObjectModifiedEvent
+from zope.lifecycleevent import ObjectAddedEvent
+from zope.lifecycleevent import ObjectModifiedEvent
 
 
 def _update_tags(obj: Campus):
