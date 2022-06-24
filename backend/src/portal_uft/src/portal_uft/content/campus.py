@@ -9,10 +9,12 @@ from zope.interface import implementer
 class ICampus(Schema):
     """Schema of a campus."""
 
-    city = schema.Choice(title=_("City", default="City"),
-                         vocabulary="portal_uft.vocabulary.cities",
-                         default="araguaina",
-                         required=True)
+    city = schema.Choice(
+        title=_("City", default="City"),
+        vocabulary="portal_uft.vocabulary.cities",
+        default="araguaina",
+        required=True,
+    )
 
 
 @implementer(ICampus)
