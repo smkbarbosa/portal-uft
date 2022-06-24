@@ -4,7 +4,12 @@ from zope.schema.vocabulary import SimpleTerm
 from zope.schema.vocabulary import SimpleVocabulary
 
 
-CITIES = [("palmas", "Palmas"), ("araguaina", "Araguaína"), ("gurupi", "Gurupi")]
+CITIES = (
+    ("palmas", "Palmas"),
+    ("araguaina", "Araguaína"),
+    ("gurupi", "Gurupi"),
+    ("porto", "Porto Nacional"),
+)
 
 
 @provider(IVocabularyFactory)
@@ -13,4 +18,4 @@ def cities_vocabulary(context):
     terms = []
     for token, title in CITIES:
         terms.append(SimpleTerm(token, token, title))  # duplica o indice
-    return Vocabulario[terms]
+    return SimpleVocabulary(terms)

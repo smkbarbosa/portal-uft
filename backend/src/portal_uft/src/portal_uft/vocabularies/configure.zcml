@@ -1,9 +1,8 @@
 <configure xmlns="http://namespaces.zope.org/zope">
 
-  <utility>name="portal_uft.vocabulary.cities"
-
+  <utility
+      name="portal_uft.vocabulary.cities"
       component=".cities.cities_vocabulary"
+      />
 
-      /&gt;
-
-  </utility></configure>
+</configure>
