@@ -17,7 +17,7 @@ class TestCitiesVocabulary(unittest.TestCase):
     def test_vocabulary(self):
         vocab = api.vocabulary.get(VOCABULARY)
         items = [term for term in vocab]
-        self.assertEqual(len(items), 3)
+        self.assertEqual(len(items), 4)
 
     def test_vocabulary_titles(self):
         vocab = api.vocabulary.get(VOCABULARY)
