@@ -64,16 +64,6 @@ class TestUsernameValidator(unittest.TestCase):
 
     def test_invalid(self):
         values = [
-            ("Alex Lima", " @uft.edu.br"),
-            ("Jonh Leno", "jonh.leno@uft .edu.br"),
-            ("Foo Bar", "foo@bar@uft.edu.br"),
-            ("Foo Bar", ""),
-        ]
-        for title, email in values:
-            self.assertFalse(validators.is_valid_username(title, email))
-
-    def test_invalid(self):
-        values = [
             ("Alex Limi", " @uft.edu.br"),
             ("Alan Runyan", ""),
             ("Alan Runyan", "runyaga@uft.edu.br"),

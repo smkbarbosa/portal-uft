@@ -1,23 +1,18 @@
 from kitconcept import api
 from plone.app.testing import setRoles
 from plone.app.testing import TEST_USER_ID
-from portal_uft import validators
-from portal_uft.content.person import IPerson
+from portal_uft.content.campus import ICampus
 from portal_uft.testing import PORTAL_UFT_INTEGRATION_TESTING
 from zope.component import createObject
 
 import unittest
 
 
-class MockPerson:
-    """Mock of a person."""
-
-
-class PersonIntegrationTest(unittest.TestCase):
+class CampusIntegrationTest(unittest.TestCase):
 
     layer = PORTAL_UFT_INTEGRATION_TESTING
 
-    portal_type = "person"
+    portal_type = "campus"
 
     def setUp(self):
         """Custom shared utility setup for tests."""
@@ -29,7 +24,7 @@ class PersonIntegrationTest(unittest.TestCase):
     def test_schema(self):
         fti = api.fti.get(self.portal_type)
         schema = fti.lookupSchema()
-        self.assertEqual(IPerson, schema)
+        self.assertEqual(ICampus, schema)
 
     def test_fti(self):
         fti = api.fti.get(self.portal_type)
@@ -39,31 +34,16 @@ class PersonIntegrationTest(unittest.TestCase):
         fti = api.fti.get(self.portal_type)
         factory = fti.factory
         obj = createObject(factory)
-        self.assertTrue(IPerson.providedBy(obj))
+        self.assertTrue(ICampus.providedBy(obj))
 
     def test_adding(self):
         obj = api.content.create(
             container=self.portal,
             type=self.portal_type,
-            title="Alex Limi",
-            description="Plone Founder",
-            email="limi@uft.edu.br",
-            extension="1999",
+            title="Palmas",
+            description="Campus da UFT em Palmas",
+            email="palmas@uft.edu.br",
+            extension="2022",
         )
-        self.assertTrue(IPerson.providedBy(obj))
-        self.assertEqual(obj, self.portal["alex-limi"])
-
-    def test_invariant_validate_email_invalid(self):
-        data = MockPerson()
-        data.title = "Alex Limi"
-        data.email = "limi@uft.edu.br"
-        try:
-            IPerson.validateInvariants(data)
-        except validators.BadValue:
-            pass
-
-    def test_invariant_validate_email_valid(self):
-        data = MockPerson()
-        data.title = "Alex Limi"
-        data.email = "alex.limi@uft.edu.br"
-        IPerson.validateInvariants(data)
+        self.assertTrue(ICampus.providedBy(obj))
+        self.assertEqual(obj, self.portal["palmas"])

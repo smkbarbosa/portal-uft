@@ -28,7 +28,7 @@ class ContactInfoBehaviorTest(unittest.TestCase):
         behaviors = api.fti.behaviors_for_type(portal_type)
         self.assertIn(self.BEHAVIOR, behaviors)
 
-    # def test_applied_in_campus(self):
-    #     portal_type = "campus"
-    #     behaviors = api.fti.behaviors_for_type(portal_type)
-    #     self.assertIn(self.BEHAVIOR, behaviors)
+    def test_applied_in_campus(self):
+        portal_type = "campus"
+        behaviors = api.fti.behaviors_for_type(portal_type)
+        self.assertIn(self.BEHAVIOR, behaviors)
