@@ -13,7 +13,6 @@ import {
   LanguageSelector,
   Logo,
   Navigation,
-  SearchWidget,
 } from '@plone/volto/components';
 
 /**

@@ -26,10 +26,7 @@ class IPerson(Schema):
         value_type=RelationChoice(
             title=_("person_campus", default="Campus"),
             vocabulary=StaticCatalogVocabulary(
-                {
-                    "portal_type": ["campus"],
-                    "review_state": "published",
-                }
+                {"portal_type": ["campus"], "review_state": "published"}
             ),
         ),
     )
