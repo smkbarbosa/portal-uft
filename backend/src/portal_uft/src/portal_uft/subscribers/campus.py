@@ -16,11 +16,11 @@ def _update_tags(obj: Campus):
 
 def _add_group(obj: Campus):
     """Add group when the Campus is created"""
-    groupname = f'group_{obj.getId()}'
+    groupname = f"group_{obj.getId()}"
     group = api.group.create(
         groupname=groupname,
-        title=f'group_{obj.title}',
-        description=f'Users from the Campus {obj.title}'
+        title=f"group_{obj.title}",
+        description=f"Users from the Campus {obj.title}",
     )
 
 

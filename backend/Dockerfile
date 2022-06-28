@@ -1,10 +1,10 @@
-ARG PLONE_VERSION=6.0.0a4
+ARG PLONE_VERSION=6.0.0a6
 FROM plone/plone-backend:${PLONE_VERSION}
 
-LABEL maintainer="Érico Andrei <smkbarbosa@plone.org>" \
+LABEL maintainer="Samuel Barbosa <contato@smkbarbosa.eti.br>" \
       org.label-schema.name="portal-uft-backend" \
       org.label-schema.description="Portal UFT backend image." \
-      org.label-schema.vendor="Érico Andrei"
+      org.label-schema.vendor="Samuel Barbosa"
 
 # Add local code
 COPY . .
