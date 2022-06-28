@@ -16,10 +16,10 @@ RUN yarn install \
 
 FROM base
 
-LABEL maintainer="Érico Andrei <smkbarbosa@plone.org>" \
+LABEL maintainer="Samuel Barbosa <contato@smkbarbosa.eti.br>" \
       org.label-schema.name="portal-uft-frontend" \
       org.label-schema.description="Portal UFT frontend image." \
-      org.label-schema.vendor="Érico Andrei"
+      org.label-schema.vendor="Samuel Barbosa"
 
 RUN apt-get update \
     && buildDeps="busybox" \
