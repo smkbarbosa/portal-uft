@@ -1,4 +1,5 @@
 from kitconcept import api
+from portal_uft import logger
 from portal_uft.content.campus import Campus
 from zope.lifecycleevent import ObjectAddedEvent
 from zope.lifecycleevent import ObjectModifiedEvent
@@ -22,6 +23,7 @@ def _add_group(obj: Campus):
         title=f"group_{obj.title}",
         description=f"Users from the Campus {obj.title}",
     )
+    logger.info(f"Created user group {groupname} ({group})")
 
 
 def added(obj: Campus, event: ObjectAddedEvent):
