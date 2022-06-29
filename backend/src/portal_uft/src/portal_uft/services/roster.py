@@ -1,6 +1,5 @@
 from collections import defaultdict
 from kitconcept import api
-from plone.restapi.deserializer import json_body
 from plone.restapi.services import Service
 
 
