@@ -63,9 +63,6 @@ class Header extends Component {
                   <Anontools />
                 </div>
               )}
-              {/*<div className="search">*/}
-              {/*  <SearchWidget />*/}
-              {/*</div>*/}
             </div>
           </div>
         </Container>

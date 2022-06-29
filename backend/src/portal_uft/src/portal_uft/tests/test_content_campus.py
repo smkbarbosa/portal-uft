@@ -55,11 +55,24 @@ class CampusIntegrationTest(unittest.TestCase):
             type=self.portal_type,
             title="Palmas",
             description="Campus da UFT em Palmas",
-            email="palmas@uft.edu.br",
             city="palmas",
+            email="palmas@uft.edu.br",
             extension="2022",
         )
         self.assertIn("Campus: Palmas", obj.subject)
+
+    def test_subscriber_added_group(self):
+        obj = api.content.create(
+            container=self.portal,
+            type=self.portal_type,
+            title="Palmas",
+            description="Campus da UFT em Palmas",
+            city="palmas",
+            email="palmas@uft.edu.br",
+            extension="2022",
+        )
+        group = api.group.get(groupname=f"group_{obj.title}")
+        self.assertTrue(group)
 
     def test_subscriber_modified(self):
         from zope.event import notify

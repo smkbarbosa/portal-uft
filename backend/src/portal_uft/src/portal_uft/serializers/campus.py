@@ -10,7 +10,7 @@ from zope.interface import implementer
 @implementer(ISerializeToJson)
 @adapter(ICampus, IPORTAL_UFTLayer)
 class CampusSerializer(SerializeToJson):
-    """Custom serializer for Person content type."""
+    """Serialize a Campus object to JSON."""
 
     def __call__(self, **kwargs):
         serialization = super().__call__(**kwargs)

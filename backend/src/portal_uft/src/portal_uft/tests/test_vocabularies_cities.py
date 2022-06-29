@@ -11,13 +11,13 @@ class TestCitiesVocabulary(unittest.TestCase):
 
     layer = PORTAL_UFT_INTEGRATION_TESTING
 
-    def setUp(self):
+    def setUp(self) -> None:
         self.portal = self.layer["portal"]
 
     def test_vocabulary(self):
         vocab = api.vocabulary.get(VOCABULARY)
-        items = [term for term in vocab]
-        self.assertEqual(len(items), 4)
+        terms = [term for term in vocab]
+        self.assertEqual(len(terms), 4)
 
     def test_vocabulary_titles(self):
         vocab = api.vocabulary.get(VOCABULARY)
