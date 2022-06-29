@@ -50,4 +50,3 @@ class TestCampusVocabulary(unittest.TestCase):
 
         self.assertIn("Palmas", titles)
         self.assertIn("Araguaína", titles)
-        # self.assertIn("Gurupi", titles)
