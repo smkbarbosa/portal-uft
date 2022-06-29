@@ -27,21 +27,22 @@ def auth():
 
 
 def create_doc():
-    create = requests.post(f'{base_url}/Plone/post', headers=headers,
+    create = requests.post(f'{base_url}/', headers=headers,
                            json={
                                 '@type': 'Document',
                                'id': 'gurupi',
                                'title': 'Gurupi',
-                               'description': 'Cria campus via API'
-                           }, auth=(username, password))
+                               'description': 'Cria campus via API',
+                               'login': username, 'password': password})
 
-    publish = requests.post(f'{base_url}/Plone/gurupi/@workflow/publish', headers=headers,
+    publish = requests.post(f'{base_url}/gurupi/@workflow/publish', headers=headers,
                             auth=(username, password))
 
     if create.status_code == 200:
         token = create.json()['token']
         print(f'Conteúdo criado com sucesso!')
     else:
+        print(create.status_code)
         raise ValueError('Erro ao criar conteúdo')
 
     if publish.status_code == 200:
