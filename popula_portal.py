@@ -82,26 +82,24 @@ add_to_plone(
     },
 )
 
-add_to_plone(
-    path="/campus",
-    payload={
-        "@type": "Document",
-        "id": "palmas",
-        "title": "Palmas",
-        "description": "Campus de Palmas",
-    },
-)
+contents = [
+    # id, title, city
+    ('palmas', 'Palmas', 'palmas'),
+    ('araguaina', 'Araguaína', 'araguaina'),
+]
 
-add_to_plone(
-    path="/campus",
-    payload={
-        "@type": "Document",
-        "id": "araguaina",
-        "title": "Araguaína",
-        "description": "Campus de Araguaína",
-    },
-)
-
+for id_, title, city in contents:
+    add_to_plone(
+        path="/campus",
+        payload={
+            "@type": 'campus',
+            "id": id_,
+            "title": title,
+            "description": f'Campus da UFT em {title}',
+            "city": city,
+            'email': f'{city}@uft.edu.br',
+        }
+    )
 # o que eu tentei
 # def create_doc():
 #     create = requests.post(f'{base_url}/', headers=headers,
