@@ -70,4 +70,22 @@
         />
   </genericsetup:upgradeSteps>
 
+  <genericsetup:upgradeSteps
+      profile="portal_uft:default"
+      source="20220629001"
+      destination="20220630001"
+      >
+
+    <genericsetup:upgradeDepends
+        title="Update permissions rolemap (with portal_uft: Add Campus)"
+        import_steps="rolemap"
+        />
+
+    <genericsetup:upgradeDepends
+        title="Modify add permission for Campus"
+        import_steps="typeinfo"
+        />
+  </genericsetup:upgradeSteps>
+
+
 </configure>
