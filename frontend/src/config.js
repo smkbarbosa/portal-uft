@@ -40,5 +40,9 @@ export default function applyConfig(config) {
     ...config.blocks.blocksConfig.__grid.gridAllowedBlocks,
     'personBlock',
   ];
+  config.blocks.blocksConfig.__grid.gridAllowedBlocks = [
+    ...config.blocks.blocksConfig.__grid.gridAllowedBlocks,
+    'campusBlock',
+  ];
   return config;
 }

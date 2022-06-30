@@ -4,27 +4,25 @@
  */
 
 import React from 'react';
+import { Grid, Card, Image, Segment } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
-import { Image } from 'semantic-ui-react';
 import EmailWidget from '@plone/volto/components/theme/Widgets/EmailWidget';
-import PersonList from '@package/components/PersonList/PersonList';
+import ListCard from '../ListCard/ListCard';
 
 const PreviewImage = ({ content }) => {
   const { image, image_caption } = content;
   const scale_name = 'preview';
   const scale = image.scales[scale_name];
-  const { download } = scale;
+  const { download, heigth, width } = scale;
   return (
     <Image
       src={download}
       alt={image_caption}
-      size={'medium'}
-      float={'right'}
-      circular
-    />
+      height={heigth}
+      size={width}
+    ></Image>
   );
 };
-
 /**
  * CampusView view component class.
  * @function CampusView
@@ -35,45 +33,44 @@ const CampusView = (props) => {
   const { content } = props;
 
   return (
-    <div id="page-document" className="ui container viewwrapper person-view">
-      <header>
-        <h1 className="documentFirstHeading">{content.title}</h1>
-      </header>
-      <div className="ui card" style={{ width: '720px' }}>
-        {content.image && (
-          <div className="image">
-            <PreviewImage content={content} />
-          </div>
-        )}
-        <div className="content">
-          {content.title && (
-            <div className="header">Campus: {content.city.title}</div>
-          )}
-          <div>
-            {content.description && (
-              <div className="description">{content.description}</div>
-            )}
-          </div>
-          <div>{content.city && <div>Cidade: {content.city.title}</div>}</div>
-        </div>
-        <div className="extra content">
-          <div>
-            {content.email && (
-              <div>
-                Email: <EmailWidget value={content.email} />
-              </div>
-            )}
-          </div>
-          <div>
-            {content.extension && <div>Ramal: {content.extension}</div>}
-          </div>
-        </div>
-      </div>
-      <h2>People</h2>
-      <div>
-        <PersonList items={content.persons} />
-      </div>
-    </div>
+    <Segment>
+      <Grid columns={2} divided>
+        <Grid.Row>
+          <Grid.Column>
+            <Card fluid>
+              {content.image && (
+                <div className="image">
+                  <PreviewImage content={content} />
+                </div>
+              )}
+              <Card.Content>
+                {content.title && (
+                  <Card.Header>Campus: {content.city.title}</Card.Header>
+                )}
+                {content.description && (
+                  <Card.Description>{content.description}</Card.Description>
+                )}
+              </Card.Content>
+              <Card.Content extra>
+                <div>
+                  {content.email && (
+                    <div>
+                      <EmailWidget value={content.email} />
+                    </div>
+                  )}
+                </div>
+                <div>
+                  {content.extension && <div>Ramal: {content.extension}</div>}
+                </div>
+              </Card.Content>
+            </Card>
+          </Grid.Column>
+          <Grid.Column>
+            <ListCard list={content.persons} nameList={'Equipe'} icon="user" />
+          </Grid.Column>
+        </Grid.Row>
+      </Grid>
+    </Segment>
   );
 };
 
@@ -87,6 +84,8 @@ CampusView.propTypes = {
     title: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
     image: PropTypes.object,
+    city: PropTypes.object,
+    persons: PropTypes.array,
     email: PropTypes.string.isRequired,
     extension: PropTypes.string.isRequired,
   }).isRequired,
