@@ -11,7 +11,6 @@ class IPerson(Schema):
     """Schema of a person profile."""
 
     title = schema.TextLine(title=_("person_title", default="Fullname"), required=True)
-
     description = schema.Text(
         title=_("person_description", default="Biography"), required=False
     )

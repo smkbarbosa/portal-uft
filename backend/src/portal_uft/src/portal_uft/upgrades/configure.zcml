@@ -92,7 +92,7 @@
       source="20220630001"
       destination="20220630002"
       >
-  <genericsetup:upgradeDepends
+    <genericsetup:upgradeDepends
         title="Altera o workflow do tipo Person"
         import_steps="workflow"
         />
