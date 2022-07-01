@@ -78,6 +78,7 @@ destroy: ## Provision Vagrant box
 		@echo "$(GREEN)==> Destroy Vagrant box $(RESET)"
 		sudo vagrant destroy
 		sudo rm -Rf .vagrant_private_key .vagrant
+		ssh-keygen -f ~/.ssh/known_hosts -R "[127.0.0.1]:2222"
 	fi
 
 .PHONY: provision

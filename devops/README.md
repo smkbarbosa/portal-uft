@@ -6,6 +6,7 @@ Install Python 3 virtual environment and Ansible
 
 ```shell
 cd devops
+source .env_local
 make clean
 make setup
 ```
